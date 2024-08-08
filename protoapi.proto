@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = './;protoapi';
+
+service Practice {
+  rpc DoSum (RequestNumbers) returns (Result);
+  rpc DoMinus (RequestNumbers) returns (Result);
+  rpc GetStrLength (RequestStrLen) returns (Result);
+}
+
+message RequestNumbers {
+  int64 x = 1;
+  int64 y = 2;
+}
+
+message Result {
+  int64 x = 1;
+}
+
+message RequestStrLen {
+  string str = 1;
+}
